@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar, useWindowDimensions } from 'react-native';
 
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { RootStackParamsList } from '../../routes/stack.routes';
+import { RootStackParamsList } from '../../routes/app.stack.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import LogoSvg from '../../assets/logo_background_gray.svg';

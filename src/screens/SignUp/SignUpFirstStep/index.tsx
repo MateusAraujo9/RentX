@@ -6,7 +6,7 @@ import {
   Alert
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { RootStackParamsList } from '../../../routes/stack.routes';
+import { RootAuthParamsList } from '../../../routes/auth.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import * as Yup from 'yup';
 import { BackButton } from '../../../components/BackButton';
@@ -24,7 +24,7 @@ import {
   FormTitle
 } from './styles';
 
-type SignUpScreenProp = NativeStackNavigationProp<RootStackParamsList, "SignUpFirstStep">
+type SignUpScreenProp = NativeStackNavigationProp<RootAuthParamsList, "SignUpFirstStep">
 
 export function SignUpFirstStep(){
   const [name, setName] = useState('');

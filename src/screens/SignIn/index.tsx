@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
-import { RootStackParamsList } from '../../routes/stack.routes';
+import { RootAuthParamsList } from '../../routes/auth.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useAuth } from '../../hooks/auth';
 import { 
   StatusBar, 
   KeyboardAvoidingView, 
@@ -24,13 +25,14 @@ import {
   Footer
 } from './styles';
 
-type SignInScreenProp = NativeStackNavigationProp<RootStackParamsList, "SignIn">
+type SignInScreenProp = NativeStackNavigationProp<RootAuthParamsList, "SignIn">
 
 export function SignIn(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation<SignInScreenProp>();
   const theme = useTheme();
+  const { signIn } = useAuth();
 
   async function handleSignIn() {
     try {
@@ -43,7 +45,9 @@ export function SignIn(){
       });
   
       await schema.validate({email, password});  
-      Alert.alert('Tudo certo');
+      
+      signIn({email, password});
+
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         Alert.alert('Opa', error.message);

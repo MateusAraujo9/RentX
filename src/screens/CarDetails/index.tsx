@@ -4,7 +4,7 @@ import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { useTheme } from 'styled-components';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { RootStackParamsList } from '../../routes/stack.routes';
+import { RootStackParamsList } from '../../routes/app.stack.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import Animated, { 
@@ -118,8 +118,8 @@ export function CarDetails(){
             <Name>{car.name}</Name>
           </Description>
           <Rent>
-            <Period>{car.rent.period}</Period>
-            <Price>R$ ${car.rent.price}</Price>
+            <Period>{car.period}</Period>
+            <Price>R$ ${car.price}</Price>
           </Rent>
         </Details>
 

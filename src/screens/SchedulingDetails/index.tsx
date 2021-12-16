@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from 'styled-components';
 import { format } from 'date-fns';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { RootStackParamsList } from '../../routes/stack.routes';
+import { RootStackParamsList } from '../../routes/app.stack.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { Accessory } from '../../components/Accessory';
@@ -62,7 +62,7 @@ export function SchedulingDetails(){
   const route = useRoute();
   const { car, dates } = route.params as Params;
   const theme = useTheme();
-  const rentTotal = Number(dates.length * car.rent.price);
+  const rentTotal = Number(dates.length * car.price);
 
   async function handleConfirmSchedulingDetails() {
     setLoading(true);
@@ -125,8 +125,8 @@ export function SchedulingDetails(){
             <Name>{car.name}</Name>
           </Description>
           <Rent>
-            <Period>{car.rent.period}</Period>
-            <Price>R$ {car.rent.price}</Price>
+            <Period>{car.period}</Period>
+            <Price>R$ {car.price}</Price>
           </Rent>
         </Details>
 
@@ -171,7 +171,7 @@ export function SchedulingDetails(){
         <RentalPrice>
           <RentalPriceLabel>TOTAL</RentalPriceLabel>
           <RentalPriceDetails>
-            <RentalPriceQuota>{`R$ ${car.rent.price} x${dates.length} diárias`}</RentalPriceQuota>
+            <RentalPriceQuota>{`R$ ${car.price} x${dates.length} diárias`}</RentalPriceQuota>
             <RentalPricelTotal>R$ {rentTotal}</RentalPricelTotal>
           </RentalPriceDetails>
         </RentalPrice>

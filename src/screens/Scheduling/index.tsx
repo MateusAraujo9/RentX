@@ -5,7 +5,7 @@ import { BackButton } from '../../components/BackButton';
 import ArrowSvg from '../../assets/arrow.svg';
 import { format } from 'date-fns';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { RootStackParamsList } from '../../routes/stack.routes';
+import { RootStackParamsList } from '../../routes/app.stack.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Button } from '../../components/Button';
 import { Calendar, DayProps, generateInterval, MarkedDateProps } from '../../components/Calendar';
