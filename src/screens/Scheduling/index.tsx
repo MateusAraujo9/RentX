@@ -68,7 +68,7 @@ export function Scheduling(){
     setLastSelectedDate(end);
     const interval = generateInterval(start, end)
     setMarkedDate(interval);
-
+    
     const firstDate = Object.keys(interval)[0];
     const endDate = Object.keys(interval)[Object.keys(interval).length -1];
     setRentalPeriod({

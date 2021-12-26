@@ -8,14 +8,15 @@ import { Confirmation } from '../screens/Confirmation';
 import { MyCars } from "../screens/MyCars";
 import { Splash } from "../screens/Splash";
 import { CarDTO } from "../dtos/CarDTO";
+import { Car } from '../databases/model/Car';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export type RootStackParamsList = {
   Splash: undefined,
   Home: undefined,
-  CarDetails: {car: CarDTO},
-  Scheduling: {car: CarDTO},
+  CarDetails: {car: Car},
+  Scheduling: {car: Car},
   SchedulingDetails: {
     car: CarDTO,
     dates: string[];

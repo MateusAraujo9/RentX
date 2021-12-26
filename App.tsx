@@ -25,7 +25,7 @@ export default function App() {
     Archivo_600SemiBold
   });
 
-  if (!fontsLoaded) {
+  if (!fontsLoaded) {    
     return <AppLoading />
   }
 
